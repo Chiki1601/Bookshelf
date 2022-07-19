@@ -1,0 +1,148 @@
+*, *::before, *::after {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+*::before, *::after {
+  content: "";
+  display: flex;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #CCFFFF;
+  transform: scale(1.3);
+}
+
+.books-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.bookend {
+  height: 55px;
+  width: 10px;
+  background-color: #7ab1fd;
+}
+.bookend::after {
+  height: 10px;
+  width: 33px;
+  background-image: linear-gradient(to bottom, #5796e9 30%, #7ab1fd 30%);
+  background-color: #7ab1fd;
+  transform: translateX(-33px) translateY(45.2px);
+}
+
+.book {
+  height: 83px;
+  width: 25px;
+  border-radius: 2px;
+}
+
+.book1 {
+  height: 95.45px;
+  border-top-left-radius: 1px;
+  border-bottom-left-radius: 1px;
+  background-image: linear-gradient(to right, #ffcbf5 0 50%, #ffe1fa 50% 40%);
+}
+.book1::before {
+  border-top: 14px double #ff92c9;
+  height: 12.5px;
+  transform: translateY(10px);
+}
+.book1::after {
+  border-top: 14px double #ff92c9;
+  height: 12.5px;
+  transform: translateY(60px);
+}
+
+.book2 {
+  width: 20px;
+  background-image: linear-gradient(to right, #ffd787 0 50%, #ffef91 50% 40%);
+}
+.book2::before {
+  border-top: 14px double #7ab1fd;
+  height: 5px;
+  transform: translateY(61.5px) translateX(0px);
+}
+.book2::after {
+  border-top: 14px double #7ab1fd;
+  height: 5px;
+  transform: translateY(-6px) translateX(0);
+}
+
+.book3 {
+  position: relative;
+  z-index: 3;
+  height: 89.64px;
+  justify-content: space-around;
+  background-image: linear-gradient(to right, #c9b6ff 0 50%, #dcd0ff 50% 40%);
+}
+.book3::before {
+  border-top: 6.5px double #ffffff;
+  border-bottom: 6.5px double #ffffff;
+  height: 12.5px;
+  transform: translateY(8px);
+}
+.book3::after {
+  border-top: 6.5px double #ffffff;
+  border-bottom: 6.5px double #ffffff;
+  height: 12.5px;
+  transform: translateY(55px);
+}
+
+.book4 {
+  transform: rotate(-10deg) translate(7px);
+  height: 78.85px;
+  width: 22.5px;
+  background-image: linear-gradient(to right, #7ab1fd 0 50%, #a3c9ff 50% 100%);
+}
+.book4::before {
+  border-top: 14px double #ffcbf6;
+  height: 12.5px;
+  transform: translateY(10px);
+}
+.book4::after {
+  border-radius: 0 0 1px 1px;
+  height: 16.6px;
+  width: 22.5px;
+  transform: translateY(40px) translateX(0px);
+  background-image: linear-gradient(to right, #fdbaf2 0 50%, #ffd4f8 50%);
+}
+
+.shelf {
+  height: 15px;
+  width: 400px;
+  display: flex;
+  background-image: linear-gradient(#edd8c5 0 70%, #7ab1fd 70% 100%);
+  justify-content: space-around;
+  box-shadow: 0 10px 15px -2px #c5fcf9;
+  border-radius: 2px;
+}
+.shelf::before, .shelf::after {
+  margin-top: 15px;
+  background-image: linear-gradient(#edd8c5 0 70%, #7ab1fd 70% 100%);
+  height: 20px;
+  width: 12px;
+  border-bottom-right-radius: 2px;
+  border-bottom-left-radius: 2px;
+}
+
+@keyframes book-animation {
+  50% {
+    transform: translateY(-10px);
+  }
+}
+.books-container .book1 {
+  animation: book-animation 5s 0s infinite;
+}
+.books-container .book2 {
+  animation: book-animation 5s 1s infinite;
+}
+.books-container .book3 {
+  animation: book-animation 5s 2s infinite;
+}
